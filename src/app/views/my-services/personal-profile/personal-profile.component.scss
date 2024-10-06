@@ -1,0 +1,34 @@
+:host {
+    #exampleColorInput {
+      min-width: 2.5rem;
+    }
+    .color-box {
+      min-width: 2rem;
+      min-height: 2rem;
+    }
+}
+
+.label-block {
+  display: block;
+}
+
+.table-container {
+  max-height: 400px; /* Set the specific height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.scrolabel-table {
+  width: 100%; /* Ensure the table takes the full width of the container */
+  border-collapse: collapse; /* Optional: For better table styling */
+}
+
+.scrolabel-table th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick to the top of the container */
+  background-color: inherit; /* Keep the background color transparent */
+  z-index: 1; /* Ensure header stays on top */
+}
+
+
+
+  

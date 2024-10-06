@@ -1,0 +1,151 @@
+<c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+                <strong>Employee Personal Profile</strong>
+            </c-card-header>
+            <c-card-body>
+                <form [formGroup]="employeeDetailsForm" (ngSubmit)="onSubmit()">
+
+                    <c-row>
+                        <c-col xs="3" class="text-center">
+                            <img src="assets/images/edrine.JPG" alt="Profile Picture"
+                                style="width: 100%; max-width: 200px; border-radius: 50%;" />
+                        </c-col>
+
+                        <!-- Right Column for Form -->
+                        <!-- <form class="needs-validation" [formGroup]="employeeDetailsForm" (ngSubmit)="onSubmit()"> -->
+
+                        <c-col xs="9">
+                            <c-row>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Employee Name</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="Employee Name"
+                                        sizing="sm" type="text" formControlName="name" />
+                                </c-col>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Employee Id:</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="Employee Id"
+                                        sizing="sm" type="text" formControlName="employeeId" />
+                                </c-col>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Passport Number</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="Passport Number"
+                                        sizing="sm" type="text" formControlName="passportNumber" />
+                                </c-col>
+                            </c-row>
+                            <br />
+                            <c-row>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">National ID Number</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="National ID Number"
+                                        sizing="sm" type="text" formControlName="niN" />
+                                </c-col>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Nationality</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="Nationality"
+                                        sizing="sm" type="text" formControlName="nationality" />
+                                </c-col>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Email Address</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="Email Address"
+                                        formControlName="email" sizing="sm" type="email" />
+                                </c-col>
+                            </c-row>
+                            <br />
+                            <c-row>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Contact Number</label>
+                                    <input aria-label="sm input example" cFormControl placeholder="Contact Number"
+                                        formControlName="contact" sizing="sm" type="text" />
+                                </c-col>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Alternate Contact Number</label>
+                                    <input aria-label="sm input example" cFormControl
+                                        placeholder="Alternate Contact Number" formControlName="altContact" sizing="sm"
+                                        type="text" />
+                                </c-col>
+                                <c-col xs="4">
+                                    <label class="inline-block mb-2 label-block">Emergency Contact</label>
+                                    <input formControlName="emergencyContact" aria-label="sm input example" cFormControl
+                                        placeholder="Emergency Contact" sizing="sm" type="text" />
+                                </c-col>
+                            </c-row>
+                        </c-col>
+                        <!-- </form> -->
+                    </c-row>
+                </form>
+
+
+
+            </c-card-body>
+        </c-card>
+    </c-col>
+
+
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+                <strong>Employees</strong>
+            </c-card-header>
+            <c-card-body>
+
+                <!-- <table [hover]="true" cTable>
+                <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Class</th>
+                  <th scope="col">Heading</th>
+                  <th scope="col">Heading</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>&#64;mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>&#64;fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colSpan="2">Larry the Bird</td>
+                  <td>&#64;twitter</td>
+                </tr>
+                </tbody>
+              </table> -->
+
+              <div class="table-container">
+                <table [hover]="true" cTable color="dark" class="scrolabel-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Nationality</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of employeeInfo; let i = index">
+                            <td>{{ item.employeeName }}</td>
+                            <td>{{ '' }}</td>
+                            <td>{{ '' }}</td>
+                            <td>{{ '' }}</td>
+                            <td>{{ item.employeeLoginId }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+
+
+            </c-card-body>
+        </c-card>
+    </c-col>
+</c-row>
