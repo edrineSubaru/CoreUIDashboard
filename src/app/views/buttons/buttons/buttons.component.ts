@@ -16,7 +16,8 @@ import {
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
   standalone: true,
-  imports: [RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, DocsExampleComponent, ButtonDirective, IconDirective, RouterLink]
+  imports: [RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, 
+    CardBodyComponent, DocsExampleComponent, ButtonDirective, IconDirective, RouterLink]
 })
 export class ButtonsComponent {
 

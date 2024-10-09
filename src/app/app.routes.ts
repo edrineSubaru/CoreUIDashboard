@@ -88,7 +88,7 @@ export const routes: Routes = [
       {
         path: 'my-services',
         loadChildren: () =>
-          import('./views/my-services/personal-profile/my-services-routes').then(
+          import('./views/my-services/my-services-routes').then(
             (m) => m.myServicesRoutes
           ),
         canActivate: [AuthGuard], // Protect this route

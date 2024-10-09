@@ -47,6 +47,31 @@ export const navItems: INavData[] = [
         url: '/my-services/personal-profile',
         icon: 'nav-icon-bullet'
       },
+      {
+        name: 'My Attendance',
+        url: '/my-services/my-attendance',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Leave Request',
+        url: '/my-services/leave-request',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Resignation Request',
+        url: '/my-services/resignation-request',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Certificate Request',
+        url: '/my-services/certificate-request',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Work From Outside',
+        url: '/my-services/work-from-outside',
+        icon: 'nav-icon-bullet'
+      },
       
     ]
   },
