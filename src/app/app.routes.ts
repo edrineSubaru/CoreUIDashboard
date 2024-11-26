@@ -94,6 +94,15 @@ export const routes: Routes = [
         canActivate: [AuthGuard], // Protect this route
         data: { title: 'My Services' }
       },
+      {
+        path: 'task-management',
+        loadChildren: () =>
+          import('./views/task-management/task-management-route').then(
+            (m) => m.taskManagementRoutes
+          ),
+        canActivate: [AuthGuard], // Protect this route
+        data: { title: 'Task Management' }
+      },
     ]
   },
   {

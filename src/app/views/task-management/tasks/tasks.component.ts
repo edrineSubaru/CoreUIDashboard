@@ -4,18 +4,17 @@ import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder } from '@angul
 import { RowComponent, ColComponent, TableDirective, CardComponent, CardHeaderComponent, CardBodyComponent, FormDirective, ButtonDirective, FormControlDirective, FormLabelDirective, FormSelectDirective } from '@coreui/angular';
 import { IconDirective } from '@coreui/icons-angular';
 
-
 @Component({
-  selector: 'app-leave-request',
+  selector: 'app-tasks',
   standalone: true,
+  templateUrl: './tasks.component.html',
+  styleUrl: './tasks.component.scss',
   imports: [TableDirective, RowComponent, ColComponent, CardComponent, CardHeaderComponent, CardBodyComponent, 
     ReactiveFormsModule, FormsModule, FormDirective, CommonModule, ReactiveFormsModule, FormDirective, 
     FormLabelDirective, FormControlDirective, FormSelectDirective, ButtonDirective, IconDirective, 
   ],
-  templateUrl: './leave-request.component.html',
-  styleUrl: './leave-request.component.scss'
 })
-export class LeaveRequestComponent implements OnInit {
+export class TasksComponent implements OnInit {
   searchForm!: FormGroup;
   leaveInfo: any[] = [];
   selectedDate: string = '';
@@ -27,8 +26,7 @@ export class LeaveRequestComponent implements OnInit {
       name: [''],
       employeeId: [''],
       passportNumber: [''],
-      dateFrom: [''],
-     
+      dateFrom: [''],     
     });
     
   }
@@ -40,4 +38,5 @@ export class LeaveRequestComponent implements OnInit {
   clearForm(){
     
   }
+
 }

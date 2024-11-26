@@ -33,6 +33,18 @@ export const navItems: INavData[] = [
 
  
   {
+    name: 'Task Management',
+    url: '/task-management',
+    iconComponent: { name: 'cil-puzzle' },
+    children: [
+      {
+        name: 'Manage Tasks',
+        url: '/task-management/manage-tasks',
+        icon: 'nav-icon-bullet'
+      },           
+    ]
+  },
+  {
     name: 'My Services',
     url: '/my-services',
     iconComponent: { name: 'cil-puzzle' },
@@ -71,8 +83,7 @@ export const navItems: INavData[] = [
         name: 'Work From Outside',
         url: '/my-services/work-from-outside',
         icon: 'nav-icon-bullet'
-      },
-      
+      },      
     ]
   },
 
