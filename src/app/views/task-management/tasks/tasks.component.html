@@ -2,67 +2,38 @@
     <c-col xs="12">
         <c-card class="mb-4">
             <c-card-header>
-                <strong>Manage Leave Requests</strong>
+                <strong>Manage Tasks</strong>
             </c-card-header>
             <c-card-body>
-                <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
 
                     <c-row>
                         <c-col xs="12">
-                            <c-row>
-                                <!-- <c-col xs="">
-                                    <label class="inline-block mb-2 label-block">Date From</label>
-                                    <input aria-label="sm input example" cFormControl placeholder="dd/mm/yyyy"
-                                        sizing="sm" type="text" formControlName="name" />
-                                </c-col>
+                            <c-row>                              
                                 <c-col xs="3">
-                                    <label class="inline-block mb-2 label-block">Date To</label>
-                                    <input aria-label="sm input example" cFormControl placeholder="dd/mm/yyyy"
-                                        sizing="sm" type="text" formControlName="employeeId" />
-                                </c-col> -->
-                                <c-col xs="3">
-                                    <label class="inline-block mb-2 label-block">Date From</label>
+                                    <label class="inline-block mb-2 label-block">Title</label>
                                     <input
                                       type="text"
-                                      placeholder="dd/mm/yyyy"
+                                      placeholder="Title"
                                       bsDatepicker
-                                      [(ngModel)]="selectedDate"
+                                      formControlName="title"
                                       aria-label="default input example"
                                       class="form-control"
-                                      cFormControl
                                     />
-                                  </c-col>
+                                </c-col>
                                   
-
                                 <c-col xs="3">
-                                    <label class="inline-block mb-2 label-block">Date To</label>
-                                    <input aria-label="default input example" cFormControl placeholder="dd/mm/yyy"
-                                        type="text" />
+                                    <label class="inline-block mb-2 label-block">Description</label>
+                                    <input
+                                      type="text"
+                                      placeholder="Description"
+                                      bsDatepicker
+                                      formControlName="description"
+                                      aria-label="default input example"
+                                      class="form-control"
+                                    />
                                 </c-col>
-
-                                <c-col xs="3">
-                                    <label class="inline-block mb-2 label-block">Leave Type</label>
-                                    <select aria-label="Default select example" cSelect>
-                                        <option>Select</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </c-col>
-                                <c-col xs="3">
-                                    <label class="inline-block mb-2 label-block">Status</label>
-                                    <select aria-label="Default select example" cSelect>
-                                        <option>Select</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </c-col>
-                                <!-- <c-col xs="3">
-                                    <label class="inline-block mb-2 label-block">Status</label>
-                                    <input aria-label="sm input example" cFormControl placeholder="Passport Number"
-                                        sizing="sm" type="text" formControlName="passportNumber" />
-                                </c-col> -->
+                                  
                             </c-row>
                             <br>
                             <c-row>
@@ -74,7 +45,7 @@
                                       [disabled]="false" 
                                       cButton color="primary">
                                       <svg cIcon class="me-2" name="cil-bell"></svg>
-                                      Search
+                                      Save
                                     </button>
                               
                                     <!-- Secondary Button -->
@@ -109,24 +80,37 @@
                 <table [hover]="true" cTable >
                     <thead>
                         <tr>
-                            <th scope="col">Actions</th>
-                            <th scope="col">Request Status</th>
-                            <th scope="col">Leave Type</th>
-                            <th scope="col">Submmited Date</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">End Date</th>
-                            <th scope="col">Requested days</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Task Status</th>
+                            <th scope="col">Created By</th>
+                            <th scope="col">Created Date</th>
+                            <!-- <th scope="col">Status</th> -->
+                            <!-- <th scope="col">Action</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of leaveInfo; let i = index">                            
-                            <td>{{ '' }}</td>                           
-                            <td>{{ '' }}</td>
-                            <td>{{ '' }}</td>
-                            <td>{{ '' }}</td>                           
-                            <td>{{ '' }}</td>
-                            <td>{{ '' }}</td>
-                            <td>{{ '' }}</td>
+                        <tr *ngFor="let item of tasks; let i = index">                            
+                            <td>{{ item.title }}</td>                           
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.status }}</td>
+                            <td>{{ item.encCreatedBy }}</td>                           
+                            <td>{{ item.createdDate | date: 'dd/MM/yyyy' }}</td>
+                            <!-- <td><ui-switch color="#00C5AD" (click)="onStatusUpdate($event, item.encTaskId, item.isActive)"
+                                [(ngModel)]="item.isActive" size="small" class="me-1 custom-switch-size">
+                            </ui-switch></td> -->
+                            <!-- <td>
+                                <div class="icon-container">
+                                    <a class="d-inline" href="javascript:void(0);" (click)="edit(item.encTaskId, false)">
+                                        <img src="./assets/images/edit-icon.svg" alt="Edit Icon" />
+                                        <img src="D:\Programming\Lab\CoreUIDashboard\src\assets\images\edit-icon.svg" alt="Edit Icon" />
+                                        <img src="src\assets\images\edit-icon.svg" alt="Edit Icon" />                                        
+                                      </a>
+                                <a class="d-inline" href="javascript:void(0);" (click)="deletePopUp(item.encTaskId)">
+                                  <img src="./assets/images/delete-icon.svg" alt="Delete Icon" />
+                                </a>
+                              </div>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>
